@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0909">
+<meta name="description" content="Portfólio de Matheus Macedo — tecnologia, sistemas, dados e automação.">
+<title>Matheus Macedo — Tecnologia, Sistemas & Automação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0909;--panel:#151111;--red:#e8261c;--red2:#ff5146;--text:#f3eeec;--muted:#aaa2a0;--line:rgba(255,255,255,.11);--m:clamp(20px,5vw,76px);--display:'Anton',Impact,sans-serif;--body:'Manrope',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:10;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}.wrap{padding-inline:var(--m)}.red{color:var(--red2)}.display{font-family:var(--display);font-weight:400;letter-spacing:.005em;line-height:.92}.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:800}.eyebrow b{color:var(--red2)}
+header{height:76px;padding:0 var(--m);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative;z-index:5}
+.brand{font:28px var(--display);letter-spacing:.04em}.brand i{color:var(--red);font-style:normal}.navlinks{display:flex;gap:28px;color:var(--muted);font-size:13px;font-weight:700}.navlinks a:hover{color:white}.contact-pill{border:1px solid var(--line);padding:10px 17px;border-radius:99px;font-size:13px;font-weight:800;transition:.2s}.contact-pill:hover{background:var(--red);border-color:var(--red)}
+.hero{min-height:calc(100svh - 76px);position:relative;display:grid;grid-template-columns:1.1fr .9fr;align-items:end;padding:110px var(--m) 74px;overflow:hidden}
+.hero:after{content:"MATHEUS";position:absolute;left:3%;top:12%;font:clamp(130px,25vw,360px)/.8 var(--display);color:rgba(255,255,255,.025);white-space:nowrap;pointer-events:none}
+.hero-copy{position:relative;z-index:2;padding-bottom:12px}.hero-top{position:absolute;left:var(--m);right:var(--m);top:24px;display:flex;justify-content:space-between;z-index:2}.hero-top span{font-size:12px;color:var(--muted);font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.hero h1{font:clamp(76px,11vw,158px)/.84 var(--display);letter-spacing:.005em}.hero h1 span{display:block;color:var(--red2)}.role{margin-top:24px;color:var(--red2);font-size:17px;font-weight:800}.intro{max-width:510px;color:var(--muted);font-size:15px;margin-top:12px}.actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;gap:12px;background:var(--red);padding:14px 22px;border-radius:99px;font-size:13px;font-weight:800;transition:.25s}.btn:hover{background:#ff3b30;transform:translateY(-3px)}.text-link{font-size:13px;font-weight:800;color:var(--muted)}.text-link:hover{color:white}
+.portrait-wrap{position:relative;z-index:1;justify-self:center;align-self:end;width:min(100%,470px);height:min(68vh,650px);min-height:390px;display:flex;align-items:end;justify-content:center}
+.portrait-wrap:before{content:"";position:absolute;width:82%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(232,38,28,.25),transparent 70%);bottom:10%;filter:blur(12px)}
+.portrait{position:relative;width:100%;height:100%;object-fit:cover;object-position:center top;mask-image:linear-gradient(#000 78%,transparent 100%);-webkit-mask-image:linear-gradient(#000 78%,transparent 100%)}
+.photo-placeholder{position:absolute;inset:0 8% 8%;border:1px dashed rgba(255,255,255,.22);border-radius:220px 220px 20px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--muted);padding:30px;background:linear-gradient(145deg,#1a1212,#100d0d)}
+.photo-placeholder strong{font:38px var(--display);color:var(--red2)}.photo-placeholder small{max-width:220px;font-size:12px;margin-top:8px}
+.hero-foot{position:absolute;left:var(--m);right:var(--m);bottom:0;border-top:1px solid var(--line);padding:17px 0;display:flex;justify-content:space-between;color:var(--muted);font-size:12px;font-weight:700}
+section{padding:110px var(--m);border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:52px}.section-head h2{font:clamp(48px,7vw,96px)/.9 var(--display);margin-top:16px}.section-note{max-width:360px;color:var(--muted);font-size:14px}
+.grid-projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.project{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .3s,border-color .3s}.project:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.28)}.project-visual{height:230px;padding:22px;background:linear-gradient(135deg,#211111,#100d0d);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.project-visual:before{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(255,255,255,.09);border-radius:50%}.mock{width:82%;height:85%;border:1px solid rgba(255,255,255,.2);border-radius:9px;background:#0e0c0c;position:relative;z-index:1;box-shadow:0 20px 60px #0008;overflow:hidden}.mock-top{height:22px;background:#211919;border-bottom:1px solid var(--line);display:flex;gap:5px;align-items:center;padding:0 9px}.mock-top i{width:6px;height:6px;background:#655;display:block;border-radius:50%}.mock-body{padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px}.mock-body b{font:clamp(17px,2vw,26px) var(--display);color:var(--red2)}.mock-body span{display:block;height:42px;background:linear-gradient(110deg,#2c1717,#171212);border:1px solid var(--line);border-radius:5px;margin-top:10px}.project-info{padding:24px}.project-info .number{font:42px var(--display);color:var(--red2)}.project-info h3{font-size:24px;margin:6px 0}.project-info p{font-size:13px;color:var(--muted);max-width:600px}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}.tag{font-size:11px;font-weight:800;padding:6px 10px;border:1px solid var(--line);border-radius:99px;color:#ddd}.project-links{display:flex;gap:18px;margin-top:20px;font-size:12px;font-weight:800}.project-links a{color:var(--red2)}.project-links a:hover{text-decoration:underline}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:70px}.about-text{font-size:16px;color:var(--muted);max-width:650px}.about-text strong{color:var(--text)}.fact-list{border-top:1px solid var(--line)}.fact{padding:17px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:130px 1fr;gap:16px}.fact span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:800}.fact b{font-size:14px}
+.timeline{display:grid;grid-template-columns:1fr 1fr;gap:60px}.timeline h3{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}.timeline-item{padding:20px 0;border-top:1px solid var(--line)}.timeline-item small{color:var(--red2);font-weight:800;font-size:11px;letter-spacing:.1em}.timeline-item h4{font-size:17px;margin:5px 0}.timeline-item p{color:var(--muted);font-size:13px}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.cert{padding:22px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02)}.cert b{display:block;font-size:15px}.cert span{display:block;color:var(--muted);font-size:12px;margin-top:7px}.cert em{font-style:normal;color:var(--red2);font-size:11px;font-weight:800}
+.contact-section{background:linear-gradient(180deg,transparent,rgba(120,10,10,.09))}.contact-inner{display:flex;justify-content:space-between;align-items:end;gap:30px}.contact-inner h2{font:clamp(56px,9vw,120px)/.85 var(--display)}.contact-inner p{max-width:390px;color:var(--muted);font-size:14px;margin:18px 0 24px}.socials{display:flex;gap:10px;flex-wrap:wrap}.socials a{border:1px solid var(--line);padding:12px 16px;border-radius:99px;font-size:12px;font-weight:800}.socials a:hover{border-color:var(--red);color:var(--red2)}
+footer{padding:24px var(--m);border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font-size:11px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}.reveal.visible{opacity:1;transform:none}
+@media(max-width:850px){.navlinks{display:none}.hero{grid-template-columns:1fr;min-height:auto;padding-top:130px;padding-bottom:100px}.hero-copy{max-width:650px}.portrait-wrap{position:absolute;right:0;bottom:55px;width:48%;height:50%;min-height:300px;opacity:.55}.hero h1{font-size:clamp(72px,15vw,130px)}.hero-foot{font-size:10px}.two-col,.timeline{grid-template-columns:1fr;gap:38px}.cert-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){header{height:66px}.contact-pill{padding:9px 12px;font-size:11px}.hero{padding-top:120px}.hero-top span{font-size:9px}.hero h1{font-size:clamp(66px,17vw,105px)}.role{font-size:14px}.intro{font-size:13px;max-width:340px}.portrait-wrap{width:62%;height:42%;min-height:250px;right:-8%;opacity:.35}.hero-foot{gap:15px;flex-wrap:wrap}.hero-foot span:last-child{display:none}section{padding:76px var(--m)}.section-head{display:block;margin-bottom:32px}.section-note{margin-top:18px}.grid-projects{grid-template-columns:1fr}.project-visual{height:190px}.cert-grid{grid-template-columns:1fr}.fact{grid-template-columns:95px 1fr}.contact-inner{display:block}.contact-inner h2{font-size:76px}footer{gap:15px;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+
+<style id="agent-system-style">
+/* Sistema de agentes: cursores independentes + montagem por scroll */
+.reveal{opacity:0;transform:translateY(34px) scale(.985);filter:blur(5px);
+  transition:opacity .75s ease,transform .85s cubic-bezier(.2,.75,.2,1),filter .75s ease}
+.reveal.visible{opacity:1;transform:none;filter:none}
+.agent-layer{position:fixed;inset:0;z-index:30;pointer-events:none;overflow:hidden}
+.agent-cursor{position:absolute;left:0;top:0;will-change:transform;opacity:0;
+  transition:opacity .35s ease;filter:drop-shadow(0 5px 9px #0009)}
+.agent-cursor.active{opacity:1}
+.agent-pointer{width:17px;height:22px;clip-path:polygon(0 0,0 100%,28% 73%,48% 100%,62% 93%,43% 67%,83% 65%);
+  background:var(--agent-color);border:1px solid #fff;transform:rotate(-8deg)}
+.agent-label{position:absolute;left:13px;top:15px;white-space:nowrap;padding:5px 9px;
+  border-radius:5px;background:var(--agent-color);color:#100909;font:800 10px/1 var(--body);
+  letter-spacing:.04em;box-shadow:0 4px 14px #0007}
+.agent-cursor .agent-ring{position:absolute;left:-7px;top:-7px;width:30px;height:30px;
+  border:1px solid var(--agent-color);border-radius:50%;opacity:0;transform:scale(.5)}
+.agent-cursor.clicking .agent-ring{animation:agentClick .5s ease-out}
+@keyframes agentClick{0%{opacity:.8;transform:scale(.5)}100%{opacity:0;transform:scale(1.8)}}
+.agent-progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--red2);z-index:60;
+  box-shadow:0 0 12px var(--red2);pointer-events:none}
+.agent-panel{position:fixed;right:18px;bottom:18px;z-index:61;display:flex;gap:7px;align-items:center;
+  padding:8px;background:#171111eF;border:1px solid rgba(255,255,255,.13);border-radius:999px;
+  box-shadow:0 8px 30px #0008;backdrop-filter:blur(12px)}
+.agent-panel button{border:1px solid rgba(255,255,255,.14);background:#241818;color:#eee;
+  border-radius:999px;padding:8px 12px;font:800 10px var(--body);cursor:pointer}
+.agent-panel button:hover,.agent-panel button[aria-pressed="true"]{background:var(--red);border-color:var(--red)}
+.agent-status{font:700 10px var(--body);color:#aaa;padding:0 7px;white-space:nowrap}
+.agent-target{outline:1px solid color-mix(in srgb,var(--agent-color) 65%,transparent);
+  outline-offset:5px;transition:outline-color .3s}
+@media(max-width:700px){.agent-cursor{transform-origin:top left;scale:.82}.agent-panel{right:10px;bottom:10px}
+ .agent-status{display:none}}
+@media(prefers-reduced-motion:reduce){.reveal{transition:none;filter:none;transform:none}
+ .agent-layer,.agent-progress,.agent-panel{display:none!important}}
+</style>
+
+</head>
+<body>
+<header>
+  <a class="brand" href="#inicio">MM<i>.</i></a>
+  <nav class="navlinks"><a href="#projetos">Projetos</a><a href="#sobre">Sobre</a><a href="#trajetoria">Trajetória</a><a href="#certificacoes">Certificações</a></nav>
+  <a class="contact-pill" href="#contato">Vamos conversar ↗</a>
+</header>
+<main>
+<section class="hero" id="inicio">
+  <div class="hero-top"><span>TECNOLOGIA · SISTEMAS · DADOS</span><span>TRÊS LAGOAS / MS · BRASIL</span></div>
+  <div class="hero-copy">
+    <p class="eyebrow">Portfólio pessoal / 2026</p>
+    <h1 class="display">MATHEUS <span>MACEDO.</span></h1>
+    <p class="role">Tecnologia, sistemas e automação industrial.</p>
+    <p class="intro">Estudante de tecnologia com experiência prática em sistemas empresariais, rotinas de estoque e manutenção. Desenvolvo projetos que conectam software, dados e processos do mundo real.</p>
+    <div class="actions"><a class="btn" href="#projetos">Explorar projetos <b>↓</b></a><a class="text-link" href="https://github.com/theusmacode" target="_blank" rel="noopener">GitHub ↗</a></div>
+  </div>
+  <div class="portrait-wrap">
+    <div class="photo-placeholder" id="photoPlaceholder"><strong>SUA FOTO</strong><small>Substitua o arquivo assets/matheus.jpg pela sua foto profissional.</small></div>
+    <img class="portrait" id="portrait" src="matheus.jpg" alt="Foto profissional de Matheus Macedo" onload="document.getElementById('photoPlaceholder').style.display='none'" onerror="this.style.display='none'">
+  </div>
+  <div class="hero-foot"><span>CONSTRUINDO EXPERIÊNCIA NA PRÁTICA</span><span>SCROLL PARA EXPLORAR ↓</span></div>
+</section>
+
+<section id="projetos">
+  <div class="section-head reveal"><div><p class="eyebrow"><b>01</b> / Projetos selecionados</p><h2 class="display">IDEIAS QUE<br><span class="red">VIRAM SISTEMAS.</span></h2></div><p class="section-note">Projetos pessoais e acadêmicos em diferentes estágios. Cada um representa uma oportunidade de aprender, testar e resolver problemas.</p></div>
+  <div class="grid-projects">
+    <article class="project reveal">
+      <div class="project-visual"><div class="mock"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-body"><div><b>MATHFORGE</b><span></span><span></span></div><div><span></span><span></span><span></span></div></div></div></div>
+      <div class="project-info"><span class="number">01</span><h3>MathForge</h3><p>Plataforma educacional de matemática com dashboard, calculadora e ferramentas de visualização. Projeto em evolução, com foco em organizar recursos matemáticos em uma experiência única.</p><div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Vercel</span><span class="tag">Educação</span></div><div class="project-links"><a href="https://mathforge-nu.vercel.app/" target="_blank" rel="noopener">Acessar projeto ↗</a><a href="https://github.com/theusmacode/mathforge" target="_blank" rel="noopener">Código no GitHub ↗</a></div></div>
+    </article>
+    <article class="project reveal">
+      <div class="project-visual"><div class="mock"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-body"><div><b>LOGITRACK</b><span></span><span></span></div><div><span></span><span></span><span></span></div></div></div></div>
+      <div class="project-info"><span class="number">02</span><h3>LogiTrack</h3><p>Protótipo acadêmico de gestão de estoque com identificação por QR Code. Concebido para apoiar consultas e organização de materiais em um fluxo logístico.</p><div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Logística</span></div><div class="project-links"><span>Projeto acadêmico</span></div></div>
+    </article>
+    <article class="project reveal">
+      <div class="project-visual"><div class="mock"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-body"><div><b>STOCKVISION 3D</b><span></span><span></span></div><div><span></span><span></span><span></span></div></div></div></div>
+      <div class="project-info"><span class="number">03</span><h3>StockVision 3D</h3><p>Conceito de visualização tridimensional de armazém, com posições de estoque, ocupação e alertas. Uma proposta para aproximar a gestão de materiais de uma visão espacial e intuitiva.</p><div class="tags"><span class="tag">Visualização 3D</span><span class="tag">Estoque</span><span class="tag">Dashboard</span><span class="tag">Conceito</span></div><div class="project-links"><span>Conceito / protótipo visual</span></div></div>
+    </article>
+    <article class="project reveal">
+      <div class="project-visual"><div class="mock"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-body"><div><b>PROCESSOS</b><span></span><span></span></div><div><span></span><span></span><span></span></div></div></div></div>
+      <div class="project-info"><span class="number">04</span><h3>Automação e melhoria de processos</h3><p>Estudos e experimentos com ferramentas de IA e software para simplificar tarefas, estruturar informações e apoiar operações administrativas e logísticas.</p><div class="tags"><span class="tag">IA aplicada</span><span class="tag">Processos</span><span class="tag">Dados</span></div><div class="project-links"><span>Em desenvolvimento contínuo</span></div></div>
+    </article>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="section-head reveal"><div><p class="eyebrow"><b>02</b> / Sobre mim</p><h2 class="display">TECNOLOGIA<br><span class="red">COM CONTEXTO.</span></h2></div></div>
+  <div class="two-col">
+    <p class="about-text reveal">Sou estudante e profissional em início de carreira, buscando crescer na área de <strong>TI aplicada a ambientes empresariais e industriais</strong>. Minha experiência atual envolve o uso do SAP GUI em atividades operacionais, como consultas de estoque e materiais, cadastros, lançamentos, ordens de manutenção e relatórios.<br><br>Meu interesse está em entender cada vez melhor como os sistemas sustentam a operação: como os dados circulam, como os processos podem ser melhorados e onde a tecnologia pode reduzir retrabalho e aumentar a confiabilidade das informações.</p>
+    <div class="fact-list reveal">
+      <div class="fact"><span>Foco</span><b>TI, sistemas, dados e automação industrial</b></div>
+      <div class="fact"><span>Experiência</span><b>Aprendiz — Viação Piracicabana</b></div>
+      <div class="fact"><span>Sistemas</span><b>SAP GUI · consultas e rotinas operacionais</b></div>
+      <div class="fact"><span>Interesses</span><b>Suporte de TI · SAP · dados · melhoria de processos</b></div>
+      <div class="fact"><span>Localização</span><b>Três Lagoas, Mato Grosso do Sul</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="trajetoria">
+  <div class="section-head reveal"><div><p class="eyebrow"><b>03</b> / Formação e experiência</p><h2 class="display">APRENDER.<br><span class="red">APLICAR. EVOLUIR.</span></h2></div><p class="section-note">Uma trajetória em construção, combinando formação escolar, capacitação profissional e vivência prática.</p></div>
+  <div class="timeline">
+    <div class="reveal"><h3>Formação</h3>
+      <article class="timeline-item"><small>EM ANDAMENTO</small><h4>Ensino Médio — 2º ano</h4><p>Escola Exitus · formação com ênfase em Logística.</p></article>
+      <article class="timeline-item"><small>2026–2027</small><h4>Curso de Logística</h4><p>SEST SENAT · conteúdos de logística integrada, suprimentos, distribuição, supply chain e gestão de estoque.</p></article>
+    </div>
+    <div class="reveal"><h3>Experiência prática</h3>
+      <article class="timeline-item"><small>ATUAL</small><h4>Jovem Aprendiz — Viação Piracicabana</h4><p>Rotinas com SAP GUI: consultas de estoque e materiais, cadastros e lançamentos, criação e alteração de ordens de manutenção, além de relatórios e planilhas.</p></article>
+      <article class="timeline-item"><small>APRENDIZADO CONTÍNUO</small><h4>Projetos de tecnologia</h4><p>Desenvolvimento de protótipos e aplicações com apoio de ferramentas de programação e IA, evoluindo conhecimentos técnicos por meio da prática.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="certificacoes">
+  <div class="section-head reveal"><div><p class="eyebrow"><b>04</b> / Cursos e certificações</p><h2 class="display">CONHECIMENTO<br><span class="red">EM CONSTRUÇÃO.</span></h2></div></div>
+  <div class="cert-grid">
+    <article class="cert reveal"><em>MICROSOFT</em><b>Azure AI Fundamentals (AI-900)</b><span>Certificação em fundamentos de inteligência artificial na nuvem.</span></article>
+    <article class="cert reveal"><em>INOVA SOLUÇÕES</em><b>Excel Avançado</b><span>Capacitação em planilhas e recursos avançados.</span></article>
+    <article class="cert reveal"><em>INOVA SOLUÇÕES</em><b>Word Avançado</b><span>Capacitação em ferramentas avançadas de documentos.</span></article>
+    <article class="cert reveal"><em>CURSO</em><b>Gestão da Qualidade</b><span>Fundamentos de qualidade e melhoria de processos.</span></article>
+    <article class="cert reveal"><em>SALESIANO</em><b>Informática Básica</b><span>Fundamentos de informática.</span></article>
+    <article class="cert reveal"><em>SEST SENAT</em><b>Formação em Logística</b><span>Curso em andamento — 2026 a 2027.</span></article>
+  </div>
+</section>
+
+<section class="contact-section" id="contato">
+  <div class="contact-inner reveal">
+    <div><p class="eyebrow"><b>05</b> / Contato e próximos passos</p><h2 class="display">VAMOS<br><span class="red">CONECTAR?</span></h2><p>Estou construindo minha trajetória em tecnologia e aberto a conexões, oportunidades de aprendizado e projetos relacionados a sistemas, dados e processos.</p><div class="socials"><a href="https://github.com/theusmacode" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a></div></div>
+  </div>
+</section>
+</main>
+<footer><span>MATHEUS MACEDO © 2026</span><span>TECNOLOGIA · SISTEMAS · AUTOMAÇÃO</span></footer>
+
+<script id="portfolio-agent-system">
+(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    return;
+  }
+
+  const names = [
+    {name:'MATEUS', color:'#ff5146'},
+    {name:'LUNA', color:'#ffb347'},
+    {name:'ATLAS', color:'#e7e1dc'},
+    {name:'NOVA', color:'#ff7770'},
+    {name:'ORION', color:'#c6a5ff'},
+    {name:'ECHO', color:'#8ed9c2'}
+  ];
+
+  const layer = document.createElement('div');
+  layer.className = 'agent-layer';
+  layer.setAttribute('aria-hidden','true');
+  document.body.appendChild(layer);
+
+  const progress = document.createElement('div');
+  progress.className = 'agent-progress';
+  document.body.appendChild(progress);
+
+  const panel = document.createElement('div');
+  panel.className = 'agent-panel';
+  panel.innerHTML = `
+    <span class="agent-status" id="agentStatus">AGENTES PRONTOS</span>
+    <button type="button" id="agentPause" aria-pressed="false">PAUSAR</button>
+    <button type="button" id="agentReplay">REINICIAR</button>`;
+  document.body.appendChild(panel);
+
+  const cursors = names.map((agent, i) => {
+    const el = document.createElement('div');
+    el.className = 'agent-cursor';
+    el.style.setProperty('--agent-color', agent.color);
+    el.innerHTML = `<div class="agent-ring"></div><div class="agent-pointer"></div><span class="agent-label">${agent.name}</span>`;
+    layer.appendChild(el);
+    return { ...agent, el, x: innerWidth * (.18 + i * .12), y: innerHeight * .25, busy:false };
+  });
+
+  const targets = [...document.querySelectorAll('.reveal')];
+  const status = document.getElementById('agentStatus');
+  let paused = false;
+  let speed = 1;
+  let activeJobs = 0;
+  let lastScroll = window.scrollY;
+
+  // Every agent gets a separate target queue. They travel to the target,
+  // perform a visible "work" click, then reveal it.
+  const queues = cursors.map(() => []);
+  targets.forEach((target, index) => queues[index % cursors.length].push(target));
+
+  const setCursor = (agent, x, y) => {
+    agent.x = x; agent.y = y;
+    agent.el.style.transform = `translate3d(${x}px,${y}px,0)`;
+  };
+
+  const moveTo = (agent, target) => new Promise(resolve => {
+    const rect = target.getBoundingClientRect();
+    const x = Math.max(12, Math.min(innerWidth - 28, rect.left + Math.min(rect.width * .25, 100)));
+    const y = Math.max(18, Math.min(innerHeight - 35, rect.top + Math.min(rect.height * .25, 60)));
+    const startX = agent.x, startY = agent.y;
+    const duration = 650 / speed;
+    const start = performance.now();
+    agent.el.classList.add('active');
+    const step = now => {
+      if (paused) { requestAnimationFrame(step); return; }
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      setCursor(agent, startX + (x - startX) * eased, startY + (y - startY) * eased);
+      if (t < 1) requestAnimationFrame(step);
+      else resolve();
+    };
+    requestAnimationFrame(step);
+  });
+
+  const workOn = async (agent, target) => {
+    if (target.classList.contains('visible')) return;
+    activeJobs++;
+    status.textContent = `${agent.name} ESTÁ MONTANDO A PÁGINA`;
+    await moveTo(agent, target);
+    if (paused) await new Promise(resolve => {
+      const wait = setInterval(() => { if (!paused) { clearInterval(wait); resolve(); } }, 100);
+    });
+    agent.el.classList.add('clicking');
+    target.classList.add('agent-target');
+    target.style.setProperty('--agent-color', agent.color);
+    await new Promise(resolve => setTimeout(resolve, 230 / speed));
+    target.classList.add('visible');
+    agent.el.classList.remove('clicking');
+    setTimeout(() => target.classList.remove('agent-target'), 500);
+    await new Promise(resolve => setTimeout(resolve, 240 / speed));
+    activeJobs--;
+    status.textContent = activeJobs ? 'AGENTES EM AÇÃO' : 'AGENTES PRONTOS';
+  };
+
+  // Run each queue independently, giving the page a coordinated multi-agent feel.
+  const runQueue = async (agent, queue) => {
+    for (const target of queue) {
+      if (target.classList.contains('visible')) continue;
+      while (paused) await new Promise(resolve => setTimeout(resolve, 100));
+      await workOn(agent, target);
+    }
+    agent.el.classList.remove('active');
+  };
+
+  const startVisibleWork = () => {
+    const visibleTargets = targets.filter(el => {
+      const r = el.getBoundingClientRect();
+      return r.top < innerHeight * .95 && r.bottom > -30 && !el.classList.contains('visible');
+    });
+    visibleTargets.forEach((target, i) => {
+      const agent = cursors[i % cursors.length];
+      if (!agent.busy) {
+        agent.busy = true;
+        workOn(agent, target).finally(() => { agent.busy = false; });
+      }
+    });
+  };
+
+  // Reveal orchestration follows scrolling. Agents travel to items in view,
+  // rather than revealing the entire document immediately on load.
+  const pending = [];
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting || entry.target.classList.contains('visible')) return;
+      if (!pending.includes(entry.target)) pending.push(entry.target);
+    });
+    pumpAgents();
+  }, {threshold:0.12, rootMargin:'0px 0px -5% 0px'});
+
+  function pumpAgents() {
+    cursors.forEach(agent => {
+      if (agent.busy || paused || pending.length === 0) return;
+      const target = pending.shift();
+      if (!target || target.classList.contains('visible')) { pumpAgents(); return; }
+      agent.busy = true;
+      workOn(agent, target).finally(() => {
+        agent.busy = false;
+        pumpAgents();
+      });
+    });
+  }
+  targets.forEach(el => observer.observe(el));
+
+  // Initial hero choreography: stagger the first elements, then let scroll drive the rest.
+  const heroItems = [...document.querySelectorAll('.hero-copy .eyebrow,.hero-copy h1,.hero-copy .role,.hero-copy .intro,.hero-copy .actions,.hero-top,.hero-foot,.portrait-wrap')];
+  heroItems.forEach(el => el.classList.add('reveal'));
+  heroItems.forEach(el => observer.observe(el));
+
+  const updateProgress = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    progress.style.width = `${max > 0 ? (scrollY / max) * 100 : 0}%`;
+    if (Math.abs(scrollY - lastScroll) > 2) {
+      lastScroll = scrollY;
+      startVisibleWork();
+    }
+  };
+  addEventListener('scroll', updateProgress, {passive:true});
+  addEventListener('resize', updateProgress);
+  updateProgress();
+
+  document.getElementById('agentPause').addEventListener('click', e => {
+    paused = !paused;
+    e.currentTarget.textContent = paused ? 'CONTINUAR' : 'PAUSAR';
+    e.currentTarget.setAttribute('aria-pressed', String(paused));
+    status.textContent = paused ? 'AGENTES PAUSADOS' : 'AGENTES EM AÇÃO';
+  });
+
+  document.getElementById('agentReplay').addEventListener('click', () => {
+    paused = false;
+    document.getElementById('agentPause').textContent = 'PAUSAR';
+    document.getElementById('agentPause').setAttribute('aria-pressed','false');
+    pending.length = 0;
+    targets.forEach(el => {
+      el.classList.remove('visible','agent-target');
+      el.style.removeProperty('--agent-color');
+    });
+    cursors.forEach((agent,i) => {
+      agent.busy = false;
+      agent.el.classList.remove('active','clicking');
+      setCursor(agent, innerWidth * (.18 + i * .12), innerHeight * .25);
+    });
+    window.scrollTo({top:0,behavior:'smooth'});
+    status.textContent = 'REINICIANDO AGENTES';
+    setTimeout(() => {
+      heroItems.forEach(el => observer.observe(el));
+      targets.forEach(el => observer.observe(el));
+    }, 500);
+  });
+
+  // Gentle idle movement keeps multiple cursor identities visible without
+  // moving them randomly over text while the visitor is reading.
+  cursors.forEach((agent, i) => {
+    setCursor(agent, innerWidth * (.18 + i * .12), innerHeight * .25);
+  });
+  status.textContent = `${cursors.length} AGENTES ONLINE`;
+})();
+</script>
+
+</body>
+</html>
